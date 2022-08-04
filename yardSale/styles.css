@@ -133,6 +133,7 @@ text-align: end;
 
 /* Mobile Menu*/
 .mobile-menu{
+    background-color: var(--white);
     position: absolute;
     top: 60px;
     /*left: 60px;*/
@@ -169,6 +170,7 @@ text-align: end;
 /* ASide (product detail and shopping cart)*/
 
 .product-detail{
+    background-color: var(--white);
     width: 360px;
     padding: 0 24px;
     box-sizing: border-box;
