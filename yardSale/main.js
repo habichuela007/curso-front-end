@@ -3,18 +3,18 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const menuCartIcon = document.querySelector('.navbar-shopping-cart');
 const mobileMenu = document.querySelector('.mobile-menu');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
-menuCartIcon.addEventListener('click', toggleCartAside);
+menuCartIcon.addEventListener('click', toggleCartshoppingCartContainer);
 
 
 function toggleDesktopMenu(){
-    const isAsideClosed = aside.classList.contains('inactive');
-    if (!isAsideClosed){
-        aside.classList.add('inactive');
+    const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains('inactive');
+    if (!isshoppingCartContainerClosed){
+        shoppingCartContainer.classList.add('inactive');
     }
     //mobileMenu.classList.toggle('inactive');
 
@@ -22,17 +22,17 @@ function toggleDesktopMenu(){
 }
 
 function toggleMobileMenu(){
-    const isAsideClosed = aside.classList.contains('inactive');
-    if (!isAsideClosed){
-        aside.classList.add('inactive');
+    const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains('inactive');
+    if (!isshoppingCartContainerClosed){
+        shoppingCartContainer.classList.add('inactive');
     }
     mobileMenu.classList.toggle('inactive');
 }
 
-function toggleCartAside(){
+function toggleCartshoppingCartContainer(){
     //pregunto si tiene la clase inactive aplicada (antes o despu[es del toggle])
     //const isMobileMenuOpen = !mobileMenu.classList.contains('inactive');
-    //const isAsideOpen = !aside.classList.contains('inactive');
+    //const isshoppingCartContainerOpen = !shoppingCartContainer.classList.contains('inactive');
     //pregunto si tiene la clase inactive aplicada (antes o despu[es del toggle])
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
     const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
@@ -42,7 +42,7 @@ function toggleCartAside(){
     if (!isDesktopMenuClosed){
         desktopMenu.classList.add('inactive');
     }
-    aside.classList.toggle('inactive');    
+    shoppingCartContainer.classList.toggle('inactive');    
 }
 
 // Listado quemado en código
@@ -67,7 +67,7 @@ productList.push({
 
 //Fin de listado quemado en código
 
-/*for...aside.in devuelve el INDICE del array
+/*for...shoppingCartContainer.in devuelve el INDICE del array
 for(product in productList){
     console.log(product.name)
 }*/
