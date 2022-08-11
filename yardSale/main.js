@@ -2,13 +2,16 @@ const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const menuCartIcon = document.querySelector('.navbar-shopping-cart');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
 const mobileMenu = document.querySelector('.mobile-menu');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
+const productDetailContainer = document.querySelector('#productDetail');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
 menuCartIcon.addEventListener('click', toggleCartshoppingCartContainer);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
 
 function toggleDesktopMenu(){
@@ -43,6 +46,12 @@ function toggleCartshoppingCartContainer(){
         desktopMenu.classList.add('inactive');
     }
     shoppingCartContainer.classList.toggle('inactive');    
+}
+function openProductDetailAside(){
+    productDetailContainer.classList.remove('inactive');
+}
+function closeProductDetailAside(){
+    productDetailContainer.classList.add('inactive');
 }
 
 // Listado quemado en código
@@ -97,6 +106,8 @@ function renderProducts(arr){
         // product = {name, price, image}
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        // clase para identificar la acción del producto creado por código
+        productImg.addEventListener('click', openProductDetailAside)
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
@@ -129,5 +140,5 @@ function renderProducts(arr){
 }
 
 renderProducts (productList);
-renderProducts (productList);
-renderProducts (productList);
+// renderProducts (productList);
+// renderProducts (productList);
