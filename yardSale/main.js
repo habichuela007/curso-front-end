@@ -30,6 +30,8 @@ function toggleMobileMenu(){
         shoppingCartContainer.classList.add('inactive');
     }
     mobileMenu.classList.toggle('inactive');
+
+    closeProductDetailAside();
 }
 
 function toggleCartshoppingCartContainer(){
@@ -37,17 +39,26 @@ function toggleCartshoppingCartContainer(){
     //const isMobileMenuOpen = !mobileMenu.classList.contains('inactive');
     //const isshoppingCartContainerOpen = !shoppingCartContainer.classList.contains('inactive');
     //pregunto si tiene la clase inactive aplicada (antes o despu[es del toggle])
+    
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-    const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
-     if (!isMobileMenuClosed){
+    if (!isMobileMenuClosed){
         mobileMenu.classList.add('inactive');
     }
+
+    const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
     if (!isDesktopMenuClosed){
         desktopMenu.classList.add('inactive');
     }
+    
+    const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+    if (!isProductDetailClosed){
+        productDetailContainer.classList.add('inactive');
+    }
+    
     shoppingCartContainer.classList.toggle('inactive');    
 }
 function openProductDetailAside(){
+    shoppingCartContainer.classList.add('inactive');
     productDetailContainer.classList.remove('inactive');
 }
 function closeProductDetailAside(){
